@@ -1,0 +1,10 @@
+{
+  "name": "dashlykova",
+  "version": "1.0.0",
+  "description": "address_book",
+  "main": "index.js",
+  "repository": "dashlykova <daria.lykova@gmail.com>",
+  "author": "daria.lykova@gmail.com",
+  "license": "MIT",
+  "private": null
+}
