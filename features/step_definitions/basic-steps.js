@@ -1,4 +1,4 @@
-const { Given, Then, When } = require('cucumber')
+const { Given, Then, When, After } = require('cucumber')
 
 After(async function() {
   return await this.closeHomePage()
