@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 console.log("Hello from Camilla & Dash! <3");
 
+=======
+>>>>>>> 1493364fef010a61ab748c885325b24b63de10ec
 document.addEventListener('DOMContentLoaded', () => {
     // Select form object from the DOM
     const addContactForm = document.querySelector('.new-contact-form')
@@ -8,7 +11,11 @@ document.addEventListener('DOMContentLoaded', () => {
     addContactForm.addEventListener('submit', event => {
       // Disable default behavior when submitting form
       event.preventDefault()
+<<<<<<< HEAD
       const storage = window.localStorage
+=======
+  
+>>>>>>> 1493364fef010a61ab748c885325b24b63de10ec
       // Get all inputs elements from the form
       const {
         name,
@@ -31,6 +38,9 @@ document.addEventListener('DOMContentLoaded', () => {
       }
   
       console.log(`Saving the following contact: ${JSON.stringify(contact)}`)
+<<<<<<< HEAD
       storage.setItem('contacts', JSON.stringify([contact]))
+=======
+>>>>>>> 1493364fef010a61ab748c885325b24b63de10ec
     })
   })

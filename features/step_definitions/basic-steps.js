@@ -13,6 +13,10 @@ Then('I should see {string}', async function(content) {
 });
 
 When('I click {string}', async function(string) {
+<<<<<<< HEAD
+=======
+  // Write code here that turns the phrase above into concrete actions
+>>>>>>> 1493364fef010a61ab748c885325b24b63de10ec
   return await this.clickOnButton(string)
 });
 
