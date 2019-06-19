@@ -5,10 +5,15 @@ const puppeteer = require('puppeteer')
 const HOME_PAGE = 'http://localhost:3000/'
 
 class AddressBookWorld  {
-
+  
+  async pageDoesNotHaveTextContent(unexpectedContent) {
+    const pageContent = await this.page.content()
+    let actualContent = pageContent.match(unexpectedContent)
+    expect(actualContent).to.be.eq(null)
+    }
+  
     constructor() {}
   
-    // Open the home page using puppeteer
     async openHomePage() {
       this.browser = await puppeteer.launch({headless: false, slowmo: 100})
       this.page = await this.browser.newPage()
