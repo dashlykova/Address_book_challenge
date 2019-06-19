@@ -10,17 +10,17 @@ Given('I visit the site', async function() {
 
 Then('I should see {string}', async function(content) {
   // Write code here that turns the phrase above into concrete actions
-  return await this.pageHasContent(content);
+  return await this.pageHasTextContent(content);
 });
 
 When('I click {string}', async function(string) {
   // Write code here that turns the phrase above into concrete actions
-  return 'pending'
+  return await this.clickOnAddContactBtn()
 });
 
-Then('I fill in {string} with {string}', async function(string, string2) {
+Then('I fill in {string} with {string}', async function(field, content) {
   // Write code here that turns the phrase above into concrete actions
-  return 'pending'
+  return await this.fillFormField(field.toLowerCase(), content)
 });
 
 Then('I should have {int} contact in my address book', async function(int) {
