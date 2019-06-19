@@ -15,7 +15,7 @@ Then('I should see {string}', async function(content) {
 
 When('I click {string}', async function(string) {
   // Write code here that turns the phrase above into concrete actions
-  return await this.clickOnButton()
+  return await this.clickOnButton(string)
 });
 
 Then('I fill in {string} with {string}', async function(field, content) {
