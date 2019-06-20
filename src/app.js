@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
     renderContacts()
     const addContactForm = document.querySelector('#new-contact-form')
     addContactForm.addEventListener('submit', event => {
-        let clearMessage = document.querySelector('.contact-list');
+        let clearMessage = document.querySelector('#contact-list');
         clearMessage.innerHTML = ""
         event.preventDefault()        
         const storage = window.localStorage;    
