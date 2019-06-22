@@ -34,6 +34,18 @@ document.addEventListener('DOMContentLoaded', () => {
     renderContacts()
     const addContactForm = document.querySelector('#new-contact-form')
 
+    //toggle the input field for new contacts
+    document.getElementById("add-contact").addEventListener("click", function()
+    {
+        let form = document.getElementById("new-contact-form");    
+        if (form.style.display === "none") 
+        { 
+          form.style.display = "block";
+        } else { 
+         form.style.display = "none";
+        } 
+    })    
+
     //Had to use a different addeventlistener, couldn't get the other to work.
     document.getElementById("save-contact-btn").
     addEventListener("click", function() {
