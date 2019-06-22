@@ -1,10 +1,8 @@
-const storage = window.localStorage;
-
 const renderContacts = () => {
-    const contacts = JSON.parse(storage.getItem('contacts'))
+    const contacts = JSON.parse(localStorage.getItem('contacts'))
     
     let div = document.querySelector('.contact-list');
-    div.innderHTML = ''
+    div.innerHTML = ''
     if (contacts) {        
         const ul = document.createElement('ul')
         ul.className = "list-reset";
@@ -31,38 +29,54 @@ const renderContacts = () => {
     }
 }
 
+
 document.addEventListener('DOMContentLoaded', () => {    
     renderContacts()
     const addContactForm = document.querySelector('#new-contact-form')
-    addContactForm.addEventListener('submit', event => {
-        let clearMessage = document.querySelector('#contact-list');
-        clearMessage.innerHTML = ""
-        event.preventDefault()        
-        const storage = window.localStorage;    
-        const{
-            name,
-            email,
-            phone,
-            company,
-            notes,
-            twitter,
-        } = addContactForm.elements
 
+    //Had to use a different addeventlistener, couldn't get the other to work.
+    document.getElementById("save-contact-btn").
+    addEventListener("click", function() {
+
+        let clearMessage = document.querySelector('#new-contact-form');
+        //clearMessage.innerHTML = "" //deletes all the fields in the form.. 
+
+        event.preventDefault()        
+    
         const contact ={
             id: Date.now(),
-            name: name.value,
-            email: email.value,
-            phone: phone.value,
-            company: company.value,
-            notes: notes.value,
-            twitter: twitter.value,
+            name: document.getElementById("name").value,
+            email: document.getElementById("email").value,
+            phone: document.getElementById("phone").value,
+            company: document.getElementById("company").value,
+            notes: document.getElementById("notes").value,
+            twitter: document.getElementById("twitter").value,
         }
+        // const{
+        //     name,
+        //     email,
+        //     phone,
+        //     company,
+        //     notes,
+        //     twitter,
+        // } = addContactForm.elements
+
+        // const contact ={
+        //     id: Date.now(),
+        //     name: name.value,
+        //     email: email.value,
+        //     phone: phone.value,
+        //     company: company.value,
+        //     notes: notes.value,
+        //     twitter: twitter.value,
+        // }
+
         console.log(`Saving the following contact: ${JSON.stringify(contact)}`);
         
-        let contacts = JSON.parse(storage.getItem('contacts')) || []
+        let contacts = JSON.parse(localStorage.getItem('contacts')) || []
         contacts.push(contact)
-        storage.setItem('contacts', JSON.stringify(contacts))
+        localStorage.clear();//cleaning in between uses
+        localStorage.setItem('contacts', JSON.stringify(contacts))
         renderContacts()
-        addContactForm.reset()
     })
 })
