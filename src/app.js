@@ -52,6 +52,16 @@ document.addEventListener('DOMContentLoaded', () => {
             notes: document.getElementById("notes").value,
             twitter: document.getElementById("twitter").value,
         }
+        //emptying the fields after use. 
+        document.getElementById("name").value = "";
+        document.getElementById("email").value = "",
+        document.getElementById("phone").value = "";
+        document.getElementById("company").value = "";
+        document.getElementById("notes").value = "";
+        document.getElementById("twitter").value = "";
+
+        /**old code */
+
         // const{
         //     name,
         //     email,
