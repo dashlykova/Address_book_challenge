@@ -35,24 +35,22 @@ document.addEventListener('DOMContentLoaded', () => {
     const addContactForm = document.querySelector('#new-contact-form')
 
     //toggle the input field for new contacts
-    document.getElementById("add-contact").addEventListener("click", function()
-    {
-        let form = document.getElementById("new-contact-form");    
-        if (form.style.display === "none") 
-        { 
-          form.style.display = "block";
-        } else { 
-         form.style.display = "none";
-        } 
-    })    
+    // document.getElementById("add-contact").addEventListener("click", function()
+    // {
+    //     let form = document.getElementById("new-contact-form");    
+    //     if (form.style.display === "none") 
+    //     { 
+    //       form.style.display = "block";
+    //     } else { 
+    //      form.style.display = "none";
+    //     } 
+    // })    
 
     //Had to use a different addeventlistener, couldn't get the other to work.
     document.getElementById("save-contact-btn").
     addEventListener("click", function() {
 
         let clearMessage = document.querySelector('#new-contact-form');
-        //clearMessage.innerHTML = "" //deletes all the fields in the form.. 
-
         event.preventDefault()        
     
         const contact ={
@@ -71,27 +69,6 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById("contact-company").value = "";
         document.getElementById("contact-notes").value = "";
         document.getElementById("contact-twitter").value = "";
-
-        /**old code */
-
-        // const{
-        //     name,
-        //     email,
-        //     phone,
-        //     company,
-        //     notes,
-        //     twitter,
-        // } = addContactForm.elements
-
-        // const contact ={
-        //     id: Date.now(),
-        //     name: name.value,
-        //     email: email.value,
-        //     phone: phone.value,
-        //     company: company.value,
-        //     notes: notes.value,
-        //     twitter: twitter.value,
-        // }
 
         console.log(`Saving the following contact: ${JSON.stringify(contact)}`);
         

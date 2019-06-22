@@ -54,7 +54,7 @@ class AddressBookWorld  {
         return '#add-contact'
         break
       case 'save contact':
-        return '#save-contact'
+        return '#save-contact-btn'
         break
       default:
         throw `${btnName} button is not defined`
