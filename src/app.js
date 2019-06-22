@@ -57,20 +57,20 @@ document.addEventListener('DOMContentLoaded', () => {
     
         const contact ={
             id: Date.now(),
-            name: document.getElementById("name").value,
-            email: document.getElementById("email").value,
-            phone: document.getElementById("phone").value,
-            company: document.getElementById("company").value,
-            notes: document.getElementById("notes").value,
-            twitter: document.getElementById("twitter").value,
+            name: document.getElementById("contact-name").value,
+            email: document.getElementById("contact-email").value,
+            phone: document.getElementById("contact-phone").value,
+            company: document.getElementById("contact-company").value,
+            notes: document.getElementById("contact-notes").value,
+            twitter: document.getElementById("contact-twitter").value,
         }
         //emptying the fields after use. 
-        document.getElementById("name").value = "";
-        document.getElementById("email").value = "",
-        document.getElementById("phone").value = "";
-        document.getElementById("company").value = "";
-        document.getElementById("notes").value = "";
-        document.getElementById("twitter").value = "";
+        document.getElementById("contact-name").value = "";
+        document.getElementById("contact-email").value = "",
+        document.getElementById("contact-phone").value = "";
+        document.getElementById("contact-company").value = "";
+        document.getElementById("contact-notes").value = "";
+        document.getElementById("contact-twitter").value = "";
 
         /**old code */
 
