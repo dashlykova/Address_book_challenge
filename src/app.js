@@ -1,17 +1,21 @@
 const renderContacts = () => {
     const contacts = JSON.parse(localStorage.getItem('contacts'))
-    
+    console.log(contacts);
+
+
     let div = document.querySelector('.contact-list');
     div.innerHTML = ''
+
     if (contacts) {        
         const ul = document.createElement('ul')
         ul.className = "list-reset";
         
         contacts.forEach(contact => {
+            
             let li = document.createElement('li')
             li.innerHTML = `
                 <div class="card">
-                    <div class="content">
+                    <div class="content" onClick="deleteContact(${contact.id})">
                         <h1>${ contact.name }</h1>
                         <h2>${ contact.company }</h2>
                         <p>${ contact.notes }</p>
@@ -34,6 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
     renderContacts()
     const addContactForm = document.querySelector('#new-contact-form')
 
+    //doesnt work with cucumber. 
     //toggle the input field for new contacts
     // document.getElementById("add-contact").addEventListener("click", function()
     // {
@@ -45,6 +50,8 @@ document.addEventListener('DOMContentLoaded', () => {
     //      form.style.display = "none";
     //     } 
     // })    
+
+
 
     //Had to use a different addeventlistener, couldn't get the other to work.
     document.getElementById("save-contact-btn").
@@ -73,7 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log(`Saving the following contact: ${JSON.stringify(contact)}`);
         
         let contacts = JSON.parse(localStorage.getItem('contacts')) || []
-        contacts.push(contact)
+        contacts.push(contact) 
         localStorage.clear();//cleaning in between uses
         localStorage.setItem('contacts', JSON.stringify(contacts))
         renderContacts()

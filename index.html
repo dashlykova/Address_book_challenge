@@ -84,6 +84,33 @@
 
      
     </div>
+    <script> //this could be moved into app.js.. I think.
+        function deleteContact(id){ 
+          console.log("delete contact " + id);
+
+          let contacts = JSON.parse(localStorage.getItem('contacts')) || []
+
+          //go through contacts until some item matches the contact.id
+          contacts.forEach(contact => {
+            if(contact.id == id){
+              //localStorage.removeItem('contacts');
+
+              //remove that item
+              delete contacts[contact]; //funkar inte :-(
+
+              localStorage.clear();//cleaning in between uses?
+
+              //save into local storage the ramaining contacts
+              localStorage.setItem('contacts', JSON.stringify(contacts))
+
+              //maybe reload is needed to draw the reamaining contacts
+              location.reload;
+              
+            }
+          })
+        }
+
+    </script>
     </body>
     
     <script src="./dist/bundle.js"></script>
