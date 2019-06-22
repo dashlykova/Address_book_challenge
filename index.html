@@ -7,21 +7,23 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" type="text/css"
     href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
-  <script src="  https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
   <title>Address book</title>
 </head>
 
 <body>
+
+
   <div class="ui placeholder segment">
     <div class="ui two column very relaxed stackable grid">
       <div class="column">
         <div class="ui form">
+          
+          <div class="ui centered large blue header">Contacts</div>
+
+          <div class="ui blue submit button" id="add-contact">Add Contact</div>
+
           <div class="ui form" id="new-contact-form">
-
-            <div class="ui centered large blue header">Contacts</div>
-
-            <button class="add-contact">Add Contact</button>
-
             <div class="field">
               <label for="name">Name</label>
               <div class="ui left icon input">
@@ -71,14 +73,58 @@
             </div>
 
             <div class="ui blue submit button" id="submit">Save Contact</div>
+
             <div class="ui gray submit button">New Contact</div>
 
           </div>
         </div>
       </div>
       <div class="contact-list"></div>
+
+      <div class="ui container">
+        <div class="field">
+          <label for="name">Name</label>
+          <div class="ui left icon input">
+            <input type="text" placeholder="Username" id="contact-name">
+            <i class="user icon"></i>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="email">Email</label>
+          <div class="ui left icon input">
+            <input type="email" id="contact-email">
+            <i class="at icon"></i>
+          </div>
+        </div>
+
+      </div>
     </div>
-</body>
-<script src="./dist/bundle.js"></script>
+
+
+    <script type="text/javascript">
+    document.getElementById("add-contact").addEventListener("click", showForm); 
+    console.log("got the button listener");
+    
+
+    function showForm()
+    { console.log("showing form");
+    form = document.getElementById("new-contact-form");
+    console.log("got the form");
+    
+    if (form.style.display === "none") 
+    { 
+      form.style.display = "block";
+    } else { 
+     form.style.display = "none";
+    } 
+  }
+
+
+    </script>
+    </body>
+    
+    <script src="./dist/bundle.js"></script>
+
 
 </html>
