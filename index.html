@@ -90,14 +90,14 @@
 
           let contacts = JSON.parse(localStorage.getItem('contacts')) || []
 
+          
           //go through contacts until some item matches the contact.id
           contacts.forEach(contact => {
             if(contact.id == id){
               //localStorage.removeItem('contacts');
-
+              
               //remove that item
-              delete contacts[contact]; //funkar inte :-(
-
+              contacts.splice(contacts.indexOf(contact), 1)
               localStorage.clear();//cleaning in between uses?
 
               //save into local storage the ramaining contacts
@@ -105,7 +105,6 @@
 
               //maybe reload is needed to draw the reamaining contacts
               location.reload;
-              
             }
           })
         }
