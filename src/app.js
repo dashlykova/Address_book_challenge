@@ -38,18 +38,18 @@ document.addEventListener('DOMContentLoaded', () => {
     renderContacts()
     const addContactForm = document.querySelector('#new-contact-form')
 
-    //doesnt work with cucumber. 
+    //FIXME: doesnt work with cucumber since it starts in wrong mode!
     //toggle the input field for new contacts
-    // document.getElementById("add-contact").addEventListener("click", function()
-    // {
-    //     let form = document.getElementById("new-contact-form");    
-    //     if (form.style.display === "none") 
-    //     { 
-    //       form.style.display = "block";
-    //     } else { 
-    //      form.style.display = "none";
-    //     } 
-    // })    
+     document.getElementById("add-contact").addEventListener("click", function()
+     {
+         let form = document.getElementById("new-contact-form");    
+         if (form.style.display === "none") 
+         { 
+           form.style.display = "block";
+         } else { 
+          form.style.display = "none";
+         } 
+     })    
 
 
 
