@@ -29,6 +29,6 @@
     "@babel/core": "^7.4.5",
     "babel-core": "6",
     "babel-loader": "7",
-    "semantic-ui": "^2.4.2"
+    "semantic-ui": "^2.5.0"
   }
 }
