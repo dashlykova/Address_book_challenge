@@ -19,7 +19,7 @@
     "babel-register": "^6.26.0",
     "chai": "^4.2.0",
     "cucumber": "^5.1.0",
-    "mocha": "^6.1.4",
+    "mocha": "^10.2.0",
     "puppeteer": "^1.17.0",
     "superstatic": "^6.0.4",
     "webpack": "^4.34.0",
